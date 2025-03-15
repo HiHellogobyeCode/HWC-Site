@@ -1,0 +1,7 @@
+
+/* This file is kept minimal as we're primarily using Tailwind CSS for styling */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}

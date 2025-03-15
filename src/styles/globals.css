@@ -1,0 +1,5 @@
+.recharts-tooltip-cursor {
+  fill: transparent !important;
+  stroke: none !important;
+  display: none !important;
+}
