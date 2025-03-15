@@ -1,5 +1,4 @@
-name = "hwcsite"  # Use your Cloudflare project name
-main = "dist/index.html"
+name = "hwcsite"
 compatibility_date = "2025-03-14"
 
 [site]
