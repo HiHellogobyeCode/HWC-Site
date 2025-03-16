@@ -92,7 +92,7 @@ const defaultFounderData: FounderData = {
   position: "Founder & CEO at Hello.World Consulting",
   email: "jonathanrayreed@gmail.com",
   location: "Dallas, TX",
-  linkedin: "LinkedIn",
+  linkedin: "www.linkedin.com/in/jonathanrreed0",
   about: "Jonathan Reed uniquely bridges the gap between advanced medical neuroscience and cutting-edge AI consulting. With ongoing academic training at The University of Texas at Dallas in advanced pre-medical neuroscience and professional certification as an EMT-B, he provides a distinctive, interdisciplinary approach. As the founder of Hello.World Consulting, Jonathan excels in strategic AI implementation, sophisticated prompt engineering, and robust AI security through meticulous red-teaming.",
   experience: [
     {

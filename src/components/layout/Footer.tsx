@@ -73,7 +73,7 @@ const Footer: React.FC = () => {
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a 
               key="LinkedIn" 
-              href="#" 
+              href="https://www.linkedin.com/in/jonathanrreed0" 
               className="text-gray-400 hover:text-white text-sm transition-colors duration-200"
             >
               LinkedIn
