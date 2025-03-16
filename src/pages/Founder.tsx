@@ -97,7 +97,12 @@ const Founder = () => {
             </div>
             <div className="flex items-center gap-1">
               <Linkedin size={14} className="text-dot-cyan" />
-              <span>{founderData?.linkedin}</span>
+              <a 
+                href="https://www.linkedin.com/in/jonathanrreed0" 
+                className="hover:text-white transition-colors duration-200"
+              >
+                {founderData?.linkedin}
+              </a>
             </div>
           </div>
           

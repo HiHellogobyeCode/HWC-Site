@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
 import DotMatrixAccent from '../ui/DotMatrixAccent';
@@ -74,7 +73,7 @@ const ContactSection: React.FC = () => {
                   <p className="text-gray-400">Connect with Jonathan</p>
                 </div>
               </div>
-              <a href="#" className="text-dot-yellow hover:underline block">Jonathan Reed</a>
+              <a href="https://www.linkedin.com/in/jonathanrreed0" className="text-dot-yellow hover:underline block">Jonathan Reed</a>
             </div>
           </div>
         </div>
