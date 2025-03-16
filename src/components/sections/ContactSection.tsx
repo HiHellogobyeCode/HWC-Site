@@ -102,75 +102,71 @@ const ContactForm: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSubmitting) return;
     setIsSubmitting(true);
 
-    // Simulate form submission delay
-    await new Promise(resolve => setTimeout(resolve, 2000));
-
-    // Reset form and set submission state
-    setFormState({ name: '', email: '', subject: '', message: '' });
-    setIsSubmitting(false);
-    setFormSubmitted(true);
-    
-    // Reset form submitted state after 5 seconds
-    setTimeout(() => {
-      setFormSubmitted(false);
-    }, 5000);
+    try {
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      setFormState({ name: '', email: '', subject: '', message: '' });
+      setFormSubmitted(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6 glass-card p-6 relative">
       <div>
-        <label htmlFor="name" className="block text-sm font-medium text-gray-300">Your Name</label>
+        <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">Your Name</label>
         <input
           type="text"
           id="name"
           name="name"
           value={formState.name}
           onChange={handleChange}
-          className="mt-1 block w-full rounded-md bg-gray-800 border-gray-700 text-gray-200 shadow-sm focus:border-dot-cyan focus:ring-dot-cyan sm:text-sm"
+          className="mt-1 block w-full rounded-md bg-gray-800 border-gray-700 text-gray-200 shadow-sm focus:border-dot-cyan focus:ring-dot-cyan sm:text-sm p-3 min-h-[48px] active:scale-[0.98] transition-transform"
           placeholder="John Doe"
           required
         />
       </div>
       
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-gray-300">Your Email</label>
+        <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">Your Email</label>
         <input
           type="email"
           id="email"
           name="email"
           value={formState.email}
           onChange={handleChange}
-          className="mt-1 block w-full rounded-md bg-gray-800 border-gray-700 text-gray-200 shadow-sm focus:border-dot-cyan focus:ring-dot-cyan sm:text-sm"
+          className="mt-1 block w-full rounded-md bg-gray-800 border-gray-700 text-gray-200 shadow-sm focus:border-dot-cyan focus:ring-dot-cyan sm:text-sm p-3 min-h-[48px] active:scale-[0.98] transition-transform"
           placeholder="john.doe@example.com"
           required
         />
       </div>
       
       <div>
-        <label htmlFor="subject" className="block text-sm font-medium text-gray-300">Subject</label>
+        <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">Subject</label>
         <input
           type="text"
           id="subject"
           name="subject"
           value={formState.subject}
           onChange={handleChange}
-          className="mt-1 block w-full rounded-md bg-gray-800 border-gray-700 text-gray-200 shadow-sm focus:border-dot-cyan focus:ring-dot-cyan sm:text-sm"
+          className="mt-1 block w-full rounded-md bg-gray-800 border-gray-700 text-gray-200 shadow-sm focus:border-dot-cyan focus:ring-dot-cyan sm:text-sm p-3 min-h-[48px] active:scale-[0.98] transition-transform"
           placeholder="Tell us about your project"
           required
         />
       </div>
       
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-gray-300">Message</label>
+        <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">Message</label>
         <textarea
           id="message"
           name="message"
           rows={4}
           value={formState.message}
           onChange={handleChange}
-          className="mt-1 block w-full rounded-md bg-gray-800 border-gray-700 text-gray-200 shadow-sm focus:border-dot-cyan focus:ring-dot-cyan sm:text-sm"
+          className="mt-1 block w-full rounded-md bg-gray-800 border-gray-700 text-gray-200 shadow-sm focus:border-dot-cyan focus:ring-dot-cyan sm:text-sm p-3 active:scale-[0.98] transition-transform"
           placeholder="Your message here..."
           required
         />
@@ -178,7 +174,7 @@ const ContactForm: React.FC = () => {
       
       <div className="flex justify-end">
         <Button 
-          className="relative overflow-hidden group bg-dot-cyan hover:bg-dot-cyan/80 text-white"
+          className="relative overflow-hidden group bg-dot-cyan hover:bg-dot-cyan/80 text-white min-h-[48px] px-6 active:scale-95"
           disabled={isSubmitting}
         >
           <span className="relative z-10 flex items-center gap-2">
@@ -188,14 +184,12 @@ const ContactForm: React.FC = () => {
         </Button>
       </div>
       
-      {formSubmitted && (
-        <div className="absolute inset-0 bg-gray-900/80 backdrop-blur-sm flex items-center justify-center rounded-md">
-          <div className="text-center">
-            <h3 className="text-lg font-semibold text-green-500 mb-2">Message Sent!</h3>
-            <p className="text-gray-400">Thank you for contacting us. We'll get back to you soon.</p>
-          </div>
+      <div className="absolute inset-0 bg-gray-900/80 backdrop-blur-sm flex items-center justify-center rounded-md" style={{ visibility: formSubmitted ? 'visible' : 'hidden' }}>
+        <div className="text-center">
+          <h3 className="text-lg font-semibold text-green-500 mb-2">Message Sent!</h3>
+          <p className="text-gray-400">Thank you for contacting us. We'll get back to you soon.</p>
         </div>
-      )}
+      </div>
     </form>
   );
 };

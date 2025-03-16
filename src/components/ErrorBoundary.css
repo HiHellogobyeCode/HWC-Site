@@ -1,0 +1,20 @@
+.error-boundary {
+  padding: 2rem;
+  text-align: center;
+  color: #fff;
+  background-color: #e74c3c;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-boundary h2 {
+  margin-bottom: 1rem;
+}
+
+.error-boundary p {
+  max-width: 600px;
+  word-wrap: break-word;
+}
