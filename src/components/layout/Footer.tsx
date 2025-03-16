@@ -38,28 +38,23 @@ const Footer: React.FC = () => {
             </p>
           </div>
           
-          {/* Quick Links */}
-          <div className="space-y-4">
-            <h4 className="text-white font-medium text-sm tracking-widest uppercase">Navigation</h4>
-            <div className="grid grid-cols-2 gap-2">
-              {["Services", "About", "Founder", "Contact"].map((link) => (
-                <a 
-                  key={link} 
-                  href={link === "Founder" ? "/founder" : `#${link.toLowerCase()}`} 
-                  className="text-gray-400 hover:text-white text-sm transition-colors duration-200"
-                >
-                  {link}
-                </a>
-              ))}
-            </div>
-          </div>
-          
           {/* Contact */}
           <div className="space-y-4">
             <h4 className="text-white font-medium text-sm tracking-widest uppercase">Contact</h4>
             <div className="space-y-2">
               <p className="text-gray-400 text-sm">jonathanrayreed@gmail.com</p>
               <p className="text-gray-400 text-sm">Dallas, TX<br />United States</p>
+            </div>
+          </div>
+          
+          {/* Enterprise Solutions */}
+          <div className="space-y-4">
+            <h4 className="text-white font-medium text-sm tracking-widest uppercase">Enterprise Solutions</h4>
+            <div className="space-y-2">
+              <p className="text-gray-400 text-sm">AI Integration</p>
+              <p className="text-gray-400 text-sm">Prompt Engineering</p>
+              <p className="text-gray-400 text-sm">Digital Transformation</p>
+              <p className="text-gray-400 text-sm">Custom Software Development</p>
             </div>
           </div>
         </div>

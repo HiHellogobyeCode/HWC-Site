@@ -22,7 +22,7 @@ const Founder = () => {
 
   const handleDownloadCV = () => {
     const link = document.createElement('a');
-    link.href = '/cv.pdf';
+    link.href = '/resume.pdf';
     link.download = 'founder_cv.pdf';
     link.click();
   };
